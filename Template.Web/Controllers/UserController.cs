@@ -86,7 +86,7 @@ namespace Template.Web.Controllers
         {
            // use BaseClass helper method to retrieve Id of signed in user 
             var user = _svc.GetUser(GetSignedInUserId());
-            var userViewModel = new UserManageViewModel { 
+            var userViewModel = new UserProfileViewModel { 
                 Id = user.Id, 
                 Name = user.Name, 
                 Email = user.Email,                 
@@ -98,7 +98,7 @@ namespace Template.Web.Controllers
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> UpdateProfile([Bind("Id,Name,Email,Role")] UserManageViewModel m)       
+        public async Task<IActionResult> UpdateProfile([Bind("Id,Name,Email,Role")] UserProfileViewModel m)       
         {
             var user = _svc.GetUser(m.Id);
             // check if form is invalid and redisplay

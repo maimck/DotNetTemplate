@@ -4,7 +4,7 @@ using Template.Core.Models;
 
 namespace Template.Web.ViewModels
 {
-    public class UserManageViewModel
+    public class UserProfileViewModel
     {
         public int Id { get; set; }
 
